@@ -1,11 +1,3 @@
-![image-20221228213201935](C:\Users\rahul\AppData\Roaming\Typora\typora-user-images\image-20221228213201935.png)
-
-![image-20221228220526448](C:\Users\rahul\AppData\Roaming\Typora\typora-user-images\image-20221228220526448.png)
-
-![image-20221228220542620](C:\Users\rahul\AppData\Roaming\Typora\typora-user-images\image-20221228220542620.png)
-
-![image-20221228220604038](C:\Users\rahul\AppData\Roaming\Typora\typora-user-images\image-20221228220604038.png)
-
 
 
 
@@ -14,7 +6,7 @@
 
 
 
-![image-20221228220635456](C:\Users\rahul\AppData\Roaming\Typora\typora-user-images\image-20221228220635456.png)
+
 
 ### **In GIT the content of the files are stored in the ogjects called BLOB**
 
@@ -31,7 +23,6 @@ In git the quivelant of the Directory is TREE, tREE is basically directory listi
 
 
 
-![image-20221228221256646](C:\Users\rahul\AppData\Roaming\Typora\typora-user-images\image-20221228221256646.png)
 
 
 
@@ -73,7 +64,7 @@ Say for example you have chnaged the content of the file.
 
 
 
-![image-20221228222116584](C:\Users\rahul\AppData\Roaming\Typora\typora-user-images\image-20221228222116584.png)
+
 
 
 
@@ -83,20 +74,6 @@ This chnage means that,, you have new BLOB with new SHA1 hash
 
 
 
-![image-20221228222219185](C:\Users\rahul\AppData\Roaming\Typora\typora-user-images\image-20221228222219185.png)
-
-
-
-![image-20221228222252381](C:\Users\rahul\AppData\Roaming\Typora\typora-user-images\image-20221228222252381.png)
-
-
-
-![image-20221228222336152](C:\Users\rahul\AppData\Roaming\Typora\typora-user-images\image-20221228222336152.png)
-
-
-
 As  long as the object  doesn't chnage we don't chnage it again.
 
 
-
-![image-20221228222425056](C:\Users\rahul\AppData\Roaming\Typora\typora-user-images\image-20221228222425056.png)
