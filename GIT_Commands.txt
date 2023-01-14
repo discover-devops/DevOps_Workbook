@@ -1,0 +1,178 @@
+Installation
+apt-get install git-all
+git --version
+
+Configuring Git
+git config --global user.name "Your_Name"
+git config --global user.email "Your_Email"
+git config --global core.editor "Path_of_Editor_SW"
+git config --list
+
+Creating Repositories
+mkdir /your_project_dir
+cd /to_your_project_dir
+ls -lart
+git init
+git status
+ls -lart
+rm -rf .git
+ git status
+git init
+
+mkdir /your_2nd_project_dir
+cd /to_your_project_dir
+vi README
+vi Hello.py
+cd ..
+ git init /your_2nd_project_dir
+cd /your_2nd_project_dir
+git status
+
+Making and Recording Changes
+git add Hello.py
+git status
+ git commit -m "Commiting Hello File"
+git status
+vi Hello.py
+git status
+git diff
+
+git add Hello.py
+git status
+git commit -m "Modified Version of Hello"
+git status
+
+git add README
+ git status
+git commit -m "Commiting the README"
+ git status
+
+
+git rm Hello.py
+git rm --cached Hello.py
+git status
+Ignore files
+touch .gitignore
+git status
+echo "Hello.py" > .gitignore
+cat .gitignore
+git status
+git add .gitignore
+ git status
+git commit -m "GitIgnore Commit"
+git status
+git ls-tree -r master --name-only
+git add Hello.py
+git status
+git commit -m "hellp.py Second time "
+git status
+
+
+Viewing History
+git log
+git log
+git log --stat
+git log -n
+git log --after
+git log --oneline
+git revert <commit_id>
+
+
+
+
+
+
+Undoing 
+
+echo "This is a temp file" > tmp.txt
+git status
+git add tmp.txt
+git status
+git commit -m "Temp File "
+git status
+
+git rm tmp.txt
+git status
+git commit -m "Deleteing the tmp file"
+git status
+git revert <commit_id>
+
+git ls-tree -r master --name-only
+ vi Hello.py
+git status
+git checkout -- <file>
+
+
+Unstaging
+touch file1.txt
+git status
+git add file1.txt
+git status
+git reset HEAD file1.txt
+git status
+
+Uncommitting
+git commit -m "file1.txt Commit Operation"
+
+
+Remote Repo
+git clone <https://>
+
+
+git log --online
+git reset --hart <commit_id>
+
+
+
+GIT BRANCHES
+git branch 
+
+git branch b1 master
+
+
+git checkout b1
+git branch
+vi fileb1.txt
+git status
+git add fileb1.txt
+git status
+git commit -m "This sfor branch b1"
+git status
+git log --oneline
+
+git checkout master
+ git branch
+git log --oneline
+
+GIT Branch Merging
+git merge src dest
+
+git merge b1 master
+ls 
+git log --oneline
+
+Branch Delete
+git branch -d b1
+
+
+Rename Branch
+git branch -m <old branch name><new branch name>  
+
+
+
+Remote Libraries
+Create a remote repsitory at gitHUB
+git remote add origin https://
+git remote -v
+git push origin master
+git push origin b1
+
+Copy from the remote
+
+mkdir /remoteproj
+cd /remoteproj
+git clone URL
+ls -la
+git remote -v
+git fetch origin
+git pull origin
