@@ -137,4 +137,43 @@ Something like a large log file, that you forgot to your .gitignore file and acc
 
 $ git rm --cached <File_Name>
 
-Let's see with an example:
+
+
+Moving Files
+--------------
+If you rename a file in Git, no metadata is stored in Git that tells it you renamed the file. 
+$ git mv file_from file_to
+
+My Git Machine $ git status
+On branch master
+nothing to commit, working tree clean
+My Git Machine $
+My Git Machine $ git ls-tree -r master --name-only
+.gitignore
+old_file
+My Git Machine $
+My Git Machine $ git mv old_file New_file
+My Git Machine $
+My Git Machine $ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        renamed:    old_file -> New_file
+
+My Git Machine $ git commit -m "Rename the file"
+[master 816d68d] Rename the file
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ rename old_file => New_file (100%)
+My Git Machine $
+My Git Machine $ git status
+On branch master
+nothing to commit, working tree clean
+My Git Machine $
+
+Git remame is equivalent to:
+
+However, this is equivalent to running something like this:
+
+$ mv old_file New_file
+$ git rm old_file
+$ git add New_file
