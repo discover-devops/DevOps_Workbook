@@ -286,3 +286,209 @@ Date:   Mon Jan 2 13:57:47 2023 +0530
 
 
 
+
+Undoing Things: How to undo the chnages in Git.  we’ll do this by using undo  tools, howver be little careful, 
+because you can’t always undo some of these undos. 
+
+If you want to redo that commit, make the additional changes you forgot, stage them, and commit again using the --amend option:
+$ git commit --amend
+
+
+
+My Git Machine $ ls
+App.log  New_file
+My Git Machine $ echo "Add more data" > New_file
+
+My Git Machine $ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   New_file
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+My Git Machine $ git add New_file
+warning: in the working copy of 'New_file', LF will be replaced by CRLF the next time Git touches it
+My Git Machine $ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   New_file
+
+
+
+My Git Machine $ touch One_more_new_file
+My Git Machine $ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   New_file
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        One_more_new_file
+
+
+
+My Git Machine $ git commit -m "NewFile"
+[master e864a92] NewFile
+ 1 file changed, 1 insertion(+)
+
+
+
+My Git Machine $ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        One_more_new_file
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+
+My Git Machine $ git log -1
+commit e864a9217f324d6beb000a3a3c8815916c80c627 (HEAD -> master)
+Author: Kumar Saurabh <mymail@gmail.com>
+Date:   Mon Jan 2 15:26:33 2023 +0530
+
+    NewFile
+
+
+My Git Machine $ git add One_more_new_file
+
+
+My Git Machine $ git commit --amend
+[master fee4be3] NewFile
+ Date: Mon Jan 2 15:26:33 2023 +0530
+ 2 files changed, 1 insertion(+)
+ create mode 100644 One_more_new_file
+
+
+My Git Machine $ git status
+On branch master
+nothing to commit, working tree clean
+
+
+My Git Machine $ git log -1
+commit fee4be34cd4bba275552b72faaa25ebe322f0b9b (HEAD -> master)
+Author: Kumar Saurabh <mymail@gmail.com>
+Date:   Mon Jan 2 15:26:33 2023 +0530
+
+    NewFile
+My Git Machine $
+
+Unstaging a Staged File
+Now let’s assume you’ve changed two files and want to commit them as two separate changes, but you accidentally type git add *
+and stage them both. How can you unstage one of the two? The git status command reminds you:
+
+My Git Machine $ touch 1.txt 2.txt
+My Git Machine $ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        1.txt
+        2.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+My Git Machine $ git add *
+
+My Git Machine $ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   1.txt
+        new file:   2.txt
+
+My Git Machine $
+
+Right below the “Changes to be committed” text, it says use git reset HEAD <file>…​ to unstage. 
+So, let’s use that advice to unstage the 2.txt file:
+
+My Git Machine $ git reset HEAD 2.txt
+
+My Git Machine $ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        2.txt
+
+My Git Machine $
+
+
+Unmodifying a Modified File: Say for example, you have modified the file and you later reliaze that you don’t want to keep your changes to the CONTRIBUTING.md file? 
+How can you easily unmodify it — revert it back to what it looked like when you last committed:
+
+My Git Machine $ git status
+On branch master
+nothing to commit, working tree clean
+
+My Git Machine $ ls
+1.txt  2.txt  App.log  New_file  One_more_new_file
+
+My Git Machine $
+My Git Machine $ cat 2.txt
+My Git Machine $
+My Git Machine $ echo " Modifying 2.txt" > 2.txt
+
+My Git Machine $ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+My Git Machine $
+
+
+My Git Machine $
+My Git Machine $ git checkout -- 2.txt
+
+My Git Machine $
+My Git Machine $ git status
+On branch master
+nothing to commit, working tree clean
+My Git Machine $
+
+My Git Machine $ ls 2.txt
+2.txt
+My Git Machine $ cat 2.txt
+My Git Machine $ echo "Modifying 2.txt" > 2.txt
+My Git Machine $
+My Git Machine $ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   2.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+My Git Machine $ git add 2.txt
+warning: in the working copy of '2.txt', LF will be replaced by CRLF the next time Git touches it
+My Git Machine $
+My Git Machine $ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   2.txt
+
+My Git Machine $ echo "Modifying after Staged" > 2.txt
+My Git Machine $
+My Git Machine $ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   2.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   2.txt
+
+My Git Machine $
+
+
