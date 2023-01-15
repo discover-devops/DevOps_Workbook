@@ -14,3 +14,38 @@ What happens at the backend, actually when you create the commit by running git 
 #2: Git then creates a commit object that has the metadata and a pointer to the root project tree so it can re-create that snapshot when needed.
 
 
+GIT BRANCHES
+git branch 
+
+git branch b1 master
+
+
+git checkout b1
+git branch
+vi fileb1.txt
+git status
+git add fileb1.txt
+git status
+git commit -m "This sfor branch b1"
+git status
+git log --oneline
+
+git checkout master
+ git branch
+git log --oneline
+
+GIT Branch Merging
+git merge src dest
+
+git merge b1 master
+ls 
+git log --oneline
+
+Branch Delete
+git branch -d b1
+
+
+Rename Branch
+git branch -m <old branch name><new branch name>  
+
+![image](https://user-images.githubusercontent.com/53135263/212557129-3e945177-ec40-4850-9373-796ce93374a6.png)
