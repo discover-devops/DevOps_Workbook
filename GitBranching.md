@@ -13,5 +13,4 @@ What happens at the backend, actually when you create the commit by running git 
 #1: Git checksums each subdirectory and stores them as a tree object in the Git repository.
 #2: Git then creates a commit object that has the metadata and a pointer to the root project tree so it can re-create that snapshot when needed.
 
-<img width="551" alt="image" src="https://user-images.githubusercontent.com/53135263/212542100-5b56e291-179f-4188-b3cc-bf92edd310c9.png">
 
