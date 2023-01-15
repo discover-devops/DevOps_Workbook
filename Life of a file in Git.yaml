@@ -177,3 +177,112 @@ However, this is equivalent to running something like this:
 $ mv old_file New_file
 $ git rm old_file
 $ git add New_file
+
+
+=========================
+
+Viewing the Commit History
+In order to see what you have commited so far, you can use gi log command.
+
+My Git Machine $ git log
+commit 816d68d7c16410fae05b7dbf57e5c7d87d96c45b (HEAD -> master)
+Author: Kumar Saurabh <mymail@gmail.com>
+Date:   Mon Jan 2 14:06:05 2023 +0530
+
+    Rename the file
+
+commit efe521c855a1024fe932f6ee517c86c1561d7384
+Author: Kumar Saurabh <mymail@gmail.com>
+Date:   Mon Jan 2 14:05:17 2023 +0530
+
+    Addd olf fil
+
+commit d9f376b3aabf55bc806e056322730134b5a22020
+Author: Kumar Saurabh <mymail@gmail.com>
+Date:   Mon Jan 2 13:58:38 2023 +0530
+
+    modified .gitignore
+
+commit 3ff64933c6097c1602fca840bff8ef4559c23e16
+Author: Kumar Saurabh <mymail@gmail.com>
+Date:   Mon Jan 2 13:57:47 2023 +0530
+
+    Added .gitignore
+
+commit a363eb531e2f59695e78a587e0be670a347036ed
+Author: Kumar Saurabh <mymail@gmail.com>
+Date:   Mon Jan 2 13:56:28 2023 +0530
+
+    the file asd is gone from the repository
+
+commit 259702935bca44d7e55dc12060581cc12a167774
+
+
+One of the more helpful options is -p or --patch, which shows the difference introduced in each commit. 
+You can also limit the number of log entries displayed, such as using -2 to show only the last two entries.
+
+My Git Machine $ git log -p -2
+commit 816d68d7c16410fae05b7dbf57e5c7d87d96c45b (HEAD -> master)
+Author: Kumar Saurabh <mymail@gmail.com>
+Date:   Mon Jan 2 14:06:05 2023 +0530
+
+    Rename the file
+
+diff --git a/old_file b/New_file
+similarity index 100%
+rename from old_file
+rename to New_file
+
+commit efe521c855a1024fe932f6ee517c86c1561d7384
+Author: Kumar Saurabh <mymail@gmail.com>
+Date:   Mon Jan 2 14:05:17 2023 +0530
+
+    Addd olf fil
+
+diff --git a/old_file b/old_file
+new file mode 100644
+index 0000000..e69de29
+My Git Machine $
+
+This is very helpful for code review or to quickly browse what happened during a series of commits 
+that a collaborator has added.
+
+You can also use a series of summarizing options with git log. For example, if you want to see some 
+abbreviated stats for each commit, you can use the --stat option:
+
+My Git Machine $ git log --stat
+commit 816d68d7c16410fae05b7dbf57e5c7d87d96c45b (HEAD -> master)
+Author: Kumar Saurabh <mymail@gmail.com>
+Date:   Mon Jan 2 14:06:05 2023 +0530
+
+    Rename the file
+
+ old_file => New_file | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit efe521c855a1024fe932f6ee517c86c1561d7384
+Author: Kumar Saurabh <mymail@gmail.com>
+Date:   Mon Jan 2 14:05:17 2023 +0530
+
+    Addd olf fil
+
+ old_file | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit d9f376b3aabf55bc806e056322730134b5a22020
+Author: Kumar Saurabh <mymail@gmail.com>
+Date:   Mon Jan 2 13:58:38 2023 +0530
+
+    modified .gitignore
+
+ .gitignore | 1 +
+ 1 file changed, 1 insertion(+)
+
+commit 3ff64933c6097c1602fca840bff8ef4559c23e16
+Author: Kumar Saurabh <mymail@gmail.com>
+Date:   Mon Jan 2 13:57:47 2023 +0530
+
+=============================================
+
+
+
