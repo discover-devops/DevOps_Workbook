@@ -10,9 +10,12 @@ What is Git?
 
 
 Git is distributed version-control system. 
-If you want to use Git, you must install it on your local computer and after installation of Git, you can start tracking any changes in any of your folders on your local computer; and again, for that, you don't require any internet connection and under the hood. Git in fact, is special file system that allows you to store changes that you make in any folder. 
+If you want to use Git, you must install it on your local computer and after installation of Git, you can start tracking any changes in any of your 
+folders on your local computer; and again, for that, you don't require any internet connection and under the hood. Git in fact, is special file system 
+that allows you to store changes that you make in any folder. 
 
-GitHub is repository hosting service, and it allows you to create remote copies of your local Git repositories and more than that, it allows other people to collaborate on your repositories, download them, change, and so on. Of course, GitHub has many other features. For example, with GitHub, you are able to create website with hosting; with domain, it will be sub-domain of github.io and you will also get free SSL encryption. That is a GitHub. 
+GitHub is repository hosting service, and it allows you to create remote copies of your local Git repositories and more than that, it allows other people to 
+collaborate on your repositories, download them, change, and so on. Of course, GitHub has many other features. For example, with GitHub, you are able to create website with hosting; with domain, it will be sub-domain of github.io and you will also get free SSL encryption. That is a GitHub. 
 
 
 How  Git is Different from other VCS:
@@ -25,12 +28,13 @@ Modified means that you have changed the file but have not committed it to your 
 Staged means that you have marked a modified file in its current version to go into your next commit snapshot.
 Committed means that the data is safely stored in your local database.
 
+
 First-Time Git Setup
 ====================
 
 git config --list --show-origin
-git config --global user.name "John Doe"
-git config --global user.email johndoe@example.com
+git config --global user.name "Kumar S"
+git config --global user.email kumar@example.com
 
 Your default branch name
 git config --global init.defaultBranch main
@@ -51,10 +55,13 @@ cd /home/user/my_project
 git init
 
 This creates a new subdirectory named .git that contains all of your necessary repository files a Git repository skeleton. 
-At this point, nothing in your project is tracked yet. See Git Internals for more information about exactly what files are contained in the .git directory you just created.
+At this point, nothing in your project is tracked yet. See Git Internals for more information about exactly what files are contained in the .git directory 
+you just created.
 
 
-Remember that each file in your working directory can be in one of two states: tracked or untracked. Tracked files are files that were in the last snapshot, as well as any newly staged files; they can be unmodified, modified, or staged. In short, tracked files are files that Git knows about.
+Remember that each file in your working directory can be in one of two states: tracked or untracked. 
+Tracked files are files that were in the last snapshot, as well as any newly staged files; they can be unmodified, modified, or staged. 
+In short, tracked files are files that Git knows about.
 
 Checking the Status of Your Files
 
