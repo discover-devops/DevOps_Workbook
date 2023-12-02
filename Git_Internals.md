@@ -1,4 +1,4 @@
-Certainly! Below is a Markdown (md) file that explains Git objects - blob, tree, and commit - and their relationships. It also provides information on how to view and inspect these objects using Git commands.
+
 
 ```markdown
 # Understanding Git Objects
