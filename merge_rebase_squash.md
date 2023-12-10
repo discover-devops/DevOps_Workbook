@@ -1,4 +1,4 @@
-Certainly! Git Merge, Git Rebase, and Git Squash Commit are three different techniques used in Git version control to incorporate changes from one branch into another. Each has its own use cases and scenarios. Let's explore each of them:
+Git Merge, Git Rebase, and Git Squash Commit are three different techniques used in Git version control to incorporate changes from one branch into another. Each has its own use cases and scenarios. Let's explore each of them:
 
 ### 1. Git Merge:
 
