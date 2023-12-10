@@ -65,6 +65,10 @@ git rebase -i HEAD~n
 ```
 After running the above command, you can choose to squash or fixup commits interactively.
 
+![image](https://github.com/discover-devops/DevOps_Workbook/assets/53135263/85ab8478-beca-4638-89d5-81383ca37b16)
+
+
+
 ### How these are related:
 
 - **Git Merge vs. Git Rebase:**
