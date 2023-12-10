@@ -42,6 +42,10 @@ git merge feature-branch
 git rebase master
 ```
 
+![image](https://github.com/discover-devops/DevOps_Workbook/assets/53135263/0ade2d04-f651-4df8-a6db-71a45f7f2837)
+
+
+
 ### 3. Git Squash Commit:
 
 **Definition:**
