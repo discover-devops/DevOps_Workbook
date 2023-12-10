@@ -19,6 +19,10 @@ Git Merge, Git Rebase, and Git Squash Commit are three different techniques used
 git merge feature-branch
 ```
 
+
+![image](https://github.com/discover-devops/DevOps_Workbook/assets/53135263/2934676e-3e14-450a-9e4a-8fc8ffcda56e)
+
+
 ### 2. Git Rebase:
 
 **Definition:**
